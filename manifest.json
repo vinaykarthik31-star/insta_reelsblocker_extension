@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Distraction Blocker",
+  "version": "1.0",
+  "description": "Removes algorithmic content from Instagram while preserving intentional features like DMs and profiles.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.instagram.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Distraction Blocker Settings"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

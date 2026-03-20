@@ -1,0 +1,21 @@
+/* Aggressive hiding of known distracting elements */
+
+/* Reels Links & Icons */
+a[href*="/reels/"],
+a[href^="/reels/"] {
+  display: none !important;
+}
+
+svg[aria-label="Reels"] {
+  display: none !important;
+}
+
+/* Explore Links & Icons */
+a[href*="/explore/"],
+a[href^="/explore/"] {
+  display: none !important;
+}
+
+svg[aria-label="Explore"] {
+  display: none !important;
+}

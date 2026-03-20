@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 250px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 15px;
+      color: #333;
+      margin: 0;
+      background: #fafafa;
+    }
+    h2 {
+      font-size: 16px;
+      margin-top: 0;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 8px;
+    }
+    .toggle-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2e8bc0;
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    p.desc {
+        font-size: 11px;
+        color: #666;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+  <h2>Instagram Blocker</h2>
+  
+  <div class="toggle-container">
+    <span>Block Reels</span>
+    <label class="switch">
+      <input type="checkbox" id="blockReels" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <p class="desc">Hide Reels from feed & sidebar, and redirect /reels URLs.</p>
+
+  <div class="toggle-container">
+    <span>Block Explore</span>
+    <label class="switch">
+      <input type="checkbox" id="blockExplore" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <p class="desc">Hide Explore page links and redirect /explore URLs.</p>
+
+  <div class="toggle-container">
+    <span>Block Suggested</span>
+    <label class="switch">
+      <input type="checkbox" id="blockSuggested" checked>
+      <span class="slider"></span>
+    </label>
+  </div>
+  <p class="desc">Remove "Suggested for you" blocks from feed and sidebar.</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
